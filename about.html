@@ -26,6 +26,14 @@
           <div class="block_inside">
             <div class="image_block"> <img alt="Eden" src="images/sample_feature.jpg" />
             </div>
+                        <div class="text_block">
+                          <div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+                          
+                       </div>
+          </div>
             <div class="text_block">
               <h2>SVEWS TEAM</h2>
               <small> </small>
@@ -103,8 +111,10 @@
   font-size: 30px;
 }
 </style> <div class="icon-bar"> <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> <a href="#"
-          class="google"><i class="fa fa-google"></i></a> <a href="#" class="linkedin"><i
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> <a href="#"
+
+          class="google"><i class="fa fa-google"></i></a> <a href="#" class="linkedin"><i
+
             class="fa fa-linkedin"></i></a> <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
       </div>
       <div class="container">
@@ -147,5 +157,18 @@
         </div>
       </div>
     </div>
+  <script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+</script>
   </body>
 </html>
